@@ -1,0 +1,73 @@
+﻿@model User
+@{
+    Layout = "~/Views/Shared/_mainLayout.cshtml";
+}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+
+            <div class="card shadow border-0 rounded-3 overflow-hidden">
+
+                <div class="card-header bg-dark text-white text-center py-3">
+                    <h3 class="mb-0 fw-bold"><i class="bi bi-person-badge me-2"></i>User Details</h3>
+                </div>
+
+                <div class="card-body p-4 bg-light-subtle">
+                    
+                    <div class="d-flex align-items-center mb-3 pb-2 border-bottom">
+                        <div class="fs-3 text-info me-3">
+                            <i class="bi bi-person-fill"></i>
+                        </div>
+                        <div>
+                            <span class="text-muted d-block small fw-semibold text-uppercase">Name</span>
+                            <span class="fs-5 fw-bold text-secondary">@Model.Name</span>
+                        </div>
+                    </div>
+
+                    <div class="d-flex align-items-center mb-3 pb-2 border-bottom">
+                        <div class="fs-3 text-secondary me-3">
+                            <i class="bi bi-calendar-event"></i>
+                        </div>
+                        <div>
+                            <span class="text-muted d-block small fw-semibold text-uppercase">Age</span>
+                            <span class="fs-5 text-dark">@Model.Age</span>
+                        </div>
+                    </div>
+
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="fs-3 text-secondary me-3">
+                           <i class="bi bi-building text-warning"></i>
+                        </div>
+                        <div>
+                            <span class="text-muted d-block small fw-semibold text-uppercase">City</span>
+                            <span class="fs-5 text-dark">@Model.City</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="card-footer bg-white border-0 text-center pb-4">
+                    <div class="d-inline-flex gap-2">
+                        
+                        <a href="/Users" class="btn btn-outline-secondary px-3 rounded-2" title="Back to List">
+                            <i class="bi bi-arrow-left"></i> <span class="d-none d-sm-inline ms-1">Back</span>
+                        </a>
+
+                        <a href="/Users/Edit/@Model.Id" class="btn btn-outline-warning px-3 rounded-2" title="Edit User">
+                            <i class="bi bi-pencil"></i> <span class="d-none d-sm-inline ms-1">Edit</span>
+                        </a>
+
+                        <a href="/Users/Delete/@Model.Id" class="btn btn-outline-danger px-3 rounded-2" title="Delete User">
+                            <i class="bi bi-trash"></i> <span class="d-none d-sm-inline ms-1">Delete</span>
+                        </a>
+
+                    </div>
+                </div>
+                
+            </div>
+
+        </div>
+    </div>
+</div>
